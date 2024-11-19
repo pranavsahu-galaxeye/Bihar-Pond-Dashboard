@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ListComponent.css'; // Create a CSS file for styling
+import './ListComponent.css';
 
 const ListComponent = ({ toggle }) => {
   const [listData, setListData] = useState([]);
@@ -20,8 +20,8 @@ const ListComponent = ({ toggle }) => {
           districtAreas[district] = (districtAreas[district] || 0) + area;
         });
 
-        // Prepare list data based on the toggle state
-        const listData = Object.keys(districtCounts).map((district) => ({
+        // Prepare list data
+        let listData = Object.keys(districtCounts).map((district) => ({
           district,
           ponds: districtCounts[district],
           area: districtAreas[district],
@@ -31,6 +31,20 @@ const ListComponent = ({ toggle }) => {
         listData.sort((a, b) =>
           toggle === 'area' ? b.area - a.area : b.ponds - a.ponds
         );
+
+        // Group the last four districts into "Others"
+        if (listData.length > 4) {
+          const topDistricts = listData.slice(0, listData.length - 4); // Keep all except last 4
+          const otherDistricts = listData.slice(listData.length - 4); // Last 4
+
+          const others = {
+            district: 'Others',
+            ponds: otherDistricts.reduce((sum, item) => sum + item.ponds, 0),
+            area: otherDistricts.reduce((sum, item) => sum + item.area, 0),
+          };
+
+          listData = [...topDistricts, others]; // Combine top districts and "Others"
+        }
 
         setListData(listData);
       })
