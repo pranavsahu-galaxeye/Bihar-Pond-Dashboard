@@ -49,7 +49,7 @@ const ListComponent = ({ toggle }) => {
   }, [toggle]);
 
   return (
-    <div className="mx-2 w-full max-h-[400px] overflow-x-auto overflow-y-scroll border-2 border-[#14DFAF] rounded-[6%] bg-transparent text-[#F2F2F2] p-3 mt-[5%] mb-2 scrollbar-hide pb-28">
+    <div className="mx-2 w-full max-h-[400px] overflow-x-auto overflow-y-scroll border-2 border-[#14DFAF] rounded-[6%] bg-transparent text-[#F2F2F2] p-3 mt-[5%] mb-2 scrollbar-hide ">
       <div className="flex justify-between font-bold mb-2 border-b-2 border-[#14dfaf] pb-1">
         <span className="list-title">District</span>
         <span className="list-value">

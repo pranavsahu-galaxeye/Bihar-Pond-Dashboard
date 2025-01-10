@@ -58,7 +58,7 @@ function MapGeocoder() {
 		const geocoder_div = document.getElementById("geocoder");// Get the geocoder div by its ID
 		if (geocoder_div) {
 			if (map) {
-                console.log("TOKEN",import.meta.env.VITE_MAP_BOX_PROVIDER_ACCESS_TOKEN)
+             //   console.log("TOKEN",import.meta.env.VITE_MAP_BOX_PROVIDER_ACCESS_TOKEN)
 				const geocoder = new MapboxGeocoder({
 					accessToken: import.meta.env.VITE_MAP_BOX_PROVIDER_ACCESS_TOKEN,
 					placeholder: "Search with place name, coordinates",
