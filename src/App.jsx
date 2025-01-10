@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Map from "./components/Map/Map";
+import Map from "./components/Map/MapComponent";
 import Sidebar from "./components/Sidebar/Sidebar";
 import SignIn from "./components/Authentication/SignIn";
 import {

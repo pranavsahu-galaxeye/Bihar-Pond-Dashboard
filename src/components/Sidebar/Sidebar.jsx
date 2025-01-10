@@ -55,7 +55,12 @@ const Sidebar = () => {
       <Slide direction="left" in={openSideBox} mountOnEnter unmountOnExit>
         <Box
           component="div"
-          className="flex flex-col items-center w-full max-w-[350px] p-2.5 rounded-[15px] relative h-full z-[1000] text-[#f2f2f2] bg-gradient-to-r from-[#121212] to-[#053C3A]"
+          className={`flex flex-col items-center w-full max-w-[350px] p-2.5 rounded-[15px] relative h-full z-[1000] text-[#f2f2f2] bg-gradient-to-r from-[#121212] to-[#053C3A]`}
+          style={{
+           
+            opacity: openSideBox ? 1 : 0,
+           
+          }}
         >
           <div className="flex items-center justify-center w-full mb-2">
             <button
