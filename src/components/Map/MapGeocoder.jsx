@@ -84,30 +84,21 @@ function MapGeocoder() {
 	}, [map]);
 
 	return (
-		<>
-			{/* Render the mark on the map if coordinates are set */}
-			{markerCoordinates && (
-				<Marker
-					longitude={markerCoordinates.longitude}
-					latitude={markerCoordinates.latitude}
-					anchor="bottom"
-				/>
-			)}
-			<div
-				id="geocoder"//Geocoder div for search input
-				style={{
-					position: "absolute",
-					top: "90px",
-					left: "16px",
-					// marginLeft: "20px",
-					marginTop: "10px",
-					display: "block",
-					width: "100%",
-					maxWidth: "300px",
-				}}
-			></div>
-		</>
-	);
+    <>
+      {/* Render the mark on the map if coordinates are set */}
+      {markerCoordinates && (
+        <Marker
+          longitude={markerCoordinates.longitude}
+          latitude={markerCoordinates.latitude}
+          anchor="bottom"
+        />
+      )}
+      <div
+        id="geocoder"
+        className="absolute top-[90px] left-4 mt-2 block w-full max-w-[300px]"
+      ></div>
+    </>
+  );
 }
 
 export default MapGeocoder;
